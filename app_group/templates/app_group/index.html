@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>APP-Group</title>
+</head>
+    <script>
+        socket.onmessage = function(event) {
+        var message = event.data;
+        var chatMessagesElement = document.getElementById('chat-messages');
+        chatMessagesElement.innerHTML += '<p>' + message + '</p>';
+        };
+    </script>
+    <style>
+        #chat-messages{
+            align-items: center;
+        }
+    </style>
+    <body>
+        <div id="chat-messages"></div>
+    </body>
+</html>
