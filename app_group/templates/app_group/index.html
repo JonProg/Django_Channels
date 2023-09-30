@@ -5,20 +5,26 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>APP-Group</title>
-</head>
+    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
-        socket.onmessage = function(event) {
-        var message = event.data;
-        var chatMessagesElement = document.getElementById('chat-messages');
-        chatMessagesElement.innerHTML += '<p>' + message + '</p>';
+        var socket = new WebSocket("ws://" + window.location.host + "/chat/");
+
+        socket.onmessage = function (e) {
+            var message = JSON.parse(e.data)["message"];
+            $("#chat").append("<p>" + message + "</p>");
         };
-    </script>
-    <style>
-        #chat-messages{
-            align-items: center;
+
+        function sendMessage() {
+            var message = $("#message").val();
+            socket.send(JSON.stringify({"message": message}));
+            $("#message").val("");
         }
-    </style>
+    </script>
+</head>
     <body>
-        <div id="chat-messages"></div>
+        <div id="chat"></div>
+        <input type="text" id="message" autofocus>
+        <button onclick="sendMessage()">Enviar</button>
     </body>
 </html>
