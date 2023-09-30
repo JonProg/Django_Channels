@@ -69,6 +69,13 @@ TEMPLATES = [
     },
 ]
 
+
+CHANNEL_LAYERS = {
+    'default': {
+        'BACKEND': 'channels.layers.InMemoryChannelLayer',
+    },
+}
+
 ASGI_APPLICATION = 'project.asgi.application'
 
 
