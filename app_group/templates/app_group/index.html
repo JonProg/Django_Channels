@@ -6,7 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>APP-Group</title>
 </head>
-<body>
-    
-</body>
+    <body>
+        <h1>GroupLinker</h1>
+        {% for group in groups %}
+            <div class="group-link">
+                <a href="{% url "" %}">{{ group.name }}</a>
+            </div>
+        {% endfor %}
+    </body>
 </html>

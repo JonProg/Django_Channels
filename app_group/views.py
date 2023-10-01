@@ -1,4 +1,15 @@
 from django.shortcuts import render
+from app_group.models import Groups
 
 def index(request):
-    return render(request, "app_group/index.html")
+    groups = Groups.objects.order_by('-id')
+
+    context = {
+        'groups':groups,
+    }
+    return render(
+        request,
+        "app_group/index.html",
+        context
+    )
+
