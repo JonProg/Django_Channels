@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from app_group.models import Groups
 
 def index(request):
@@ -10,6 +10,25 @@ def index(request):
     return render(
         request,
         "app_group/index.html",
+        context
+    )
+
+
+def group(request, group_slug):
+    group = get_object_or_404(
+        Groups, slug=group_slug
+    )
+
+    title = f'Group | {group_slug}'
+
+    context = {
+        'group':group,
+        'title':title,
+    }
+
+    return render(
+        request,
+        "app_group/group.html",
         context
     )
 
