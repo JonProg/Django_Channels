@@ -2,10 +2,10 @@ from django.db import models
 from utils.rands import slugify_new
 
 class Groups(models.Model):
-    group = models.CharField(max_length=150)
+    group = models.CharField(max_length=100)
     slug = models.SlugField(
         unique = True, default = None,
-        null = True, blank = True, max_length = 150
+        null = True, blank = True, max_length = 100
     )
 
     def save(self,*args, **kwargs):
