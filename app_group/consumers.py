@@ -1,10 +1,10 @@
 import json
-
+from django.urls import resolve
 from channels.generic.websocket import AsyncWebsocketConsumer
 
 class ChatConsumer(AsyncWebsocketConsumer):
     async def connect(self):
-        self.room_group_name = "chat_group"
+        self.room_group_name = self.scope['url_route']['kwargs']['root']
 
         # Adicione o usuário ao grupo de chat
         await self.channel_layer.group_add(
