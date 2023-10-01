@@ -10,7 +10,7 @@
         <h1>GroupLinker</h1>
         {% for group in groups %}
             <div class="group-link">
-                <a href="{% url "" %}">{{ group.name }}</a>
+                <a href="{% url "app_group:group" group.slug %}">{{ group.name }}</a>
             </div>
         {% endfor %}
     </body>
