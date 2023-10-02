@@ -1,8 +1,8 @@
 from django.shortcuts import render, get_object_or_404
-from app_group.models import Groups
+from app_group.models import GroupChat
 
 def index(request):
-    groups = Groups.objects.order_by('-id')
+    groups = GroupChat.objects.order_by('-id')
 
     context = {
         'groups':groups,
@@ -16,7 +16,7 @@ def index(request):
 
 def group(request, group_slug):
     group = get_object_or_404(
-        Groups, slug=group_slug
+        GroupChat, slug=group_slug
     )
 
     title = f'Group | {group_slug}'

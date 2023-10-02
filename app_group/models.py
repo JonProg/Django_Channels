@@ -1,7 +1,7 @@
 from django.db import models
 from utils.rands import slugify_new
 
-class Groups(models.Model):
+class GroupChat(models.Model):
     name = models.CharField(max_length=100)
     slug = models.SlugField(
         unique = True, default = None,

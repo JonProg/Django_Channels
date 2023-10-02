@@ -5,5 +5,5 @@ app_name = 'app_group'
 
 urlpatterns = [
     path("", views.index, name="index"),
-    path("chat/<slug:root>", name="group")
+    path("chat/<slug:group_slug>",views.group, name="group")
 ]

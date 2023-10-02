@@ -1,8 +1,8 @@
 from django.contrib import admin
-from .models import Groups
+from .models import GroupChat
 
-@admin.register(Groups)
-class GroupsAdmin(admin.ModelAdmin):
+@admin.register(GroupChat)
+class GroupChatAdmin(admin.ModelAdmin):
     list_display = 'id', 'name', 'slug',
     list_display_links = 'name',
     search_fields = 'id', 'name', 'slug',

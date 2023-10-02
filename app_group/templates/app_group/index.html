@@ -7,7 +7,7 @@
     <title>APP-Group</title>
 </head>
     <body>
-        <h1>GroupLinker</h1>
+        <h1 style="text-align: center;">GroupLinker</h1>
         {% for group in groups %}
             <div class="group-link">
                 <a href="{% url "app_group:group" group.slug %}">{{ group.name }}</a>
