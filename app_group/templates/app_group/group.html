@@ -26,9 +26,14 @@
         body{
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
+
+        h1{
+            text-align: center;
+        }
     </style>
 </head>
     <body>
+        <h1>{{ group.slug }}</h1>
         <div id="chat"></div>
         <input type="text" id="message" autofocus>
         <button onclick="sendMessage()">Enviar</button>

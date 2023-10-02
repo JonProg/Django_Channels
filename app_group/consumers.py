@@ -1,5 +1,4 @@
 import json
-from django.urls import resolve
 from channels.generic.websocket import AsyncWebsocketConsumer
 
 class ChatConsumer(AsyncWebsocketConsumer):
