@@ -8,7 +8,8 @@
     
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
-        var socket = new WebSocket("ws://" + window.location.host + "/chat/");
+        var slug = '{{ group.slug }}';
+        var socket = new WebSocket("ws://" + window.location.host + "/chat/" + slug);
 
         socket.onmessage = function (e) {
             var message = JSON.parse(e.data)["message"];
