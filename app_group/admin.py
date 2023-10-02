@@ -14,7 +14,7 @@ class GroupChatAdmin(admin.ModelAdmin):
 
 @admin.register(Message)
 class MessageAdmin(admin.ModelAdmin):
-    list_display = 'id', 'sender', 'group', 'created_date'
-    list_display_links = 'group'
+    list_display = 'id', 'sender', 'group', 'created_date',
+    list_display_links = 'group',
     list_per_page = 10
     ordering = '-id',
