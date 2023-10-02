@@ -18,6 +18,24 @@
 
         function sendMessage() {
             var message = $("#message").val();
+
+            $.ajax({
+                url: "/save_message/",
+                type: "POST",
+                data: {
+                    'message': message,
+                    'group': slug
+                },
+                success: function(response) {
+                    // A mensagem foi enviada com sucesso
+                    // Você pode atualizar a interface do usuário conforme necessário
+                },
+                error: function(xhr, status, error) {
+                    // Ocorreu um erro ao enviar a mensagem
+                    // Lide com o erro adequadamente
+                }
+            });
+
             socket.send(JSON.stringify({"message": message}));
             $("#message").val("");
         }
@@ -35,7 +53,7 @@
     <body>
         <h1>{{ group.slug }}</h1>
         <div id="chat"></div>
-        <input type="text" id="message" autofocus>
+        <input name="text" id="message"  autofocus>
         <button onclick="sendMessage()">Enviar</button>
     </body>
 </html>

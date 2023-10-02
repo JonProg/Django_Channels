@@ -1,5 +1,6 @@
 from django.shortcuts import render, get_object_or_404
-from app_group.models import GroupChat
+from app_group.models import GroupChat, Message
+from django.http import JsonResponse
 
 def index(request):
     groups = GroupChat.objects.order_by('-id')
@@ -14,7 +15,14 @@ def index(request):
     )
 
 
-def group(request, group_slug):
+def save_message(request):
+    if request.method == 'POST':
+        message = request.POST.get('message')
+        
+        return JsonResponse({'success': True})
+
+
+def group(request, group_slug):    
     group = get_object_or_404(
         GroupChat, slug=group_slug
     )
