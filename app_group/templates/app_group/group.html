@@ -24,15 +24,14 @@
                 type: "POST",
                 data: {
                     'message': message,
+                    'csrfmiddlewaretoken': '{{ csrf_token }}',
                     'group': slug
                 },
                 success: function(response) {
-                    // A mensagem foi enviada com sucesso
-                    // Você pode atualizar a interface do usuário conforme necessário
+                    console.log("Resposta:", response);
                 },
                 error: function(xhr, status, error) {
-                    // Ocorreu um erro ao enviar a mensagem
-                    // Lide com o erro adequadamente
+                    console.log("Erro:", error);
                 }
             });
 

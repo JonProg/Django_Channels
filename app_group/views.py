@@ -18,6 +18,11 @@ def index(request):
 def save_message(request):
     if request.method == 'POST':
         message = request.POST.get('message')
+        group_slug = request.POST.get('group')
+        group = get_object_or_404(GroupChat, slug=group_slug)
+
+        user = request.user
+        Message.objects.create(sender=user, content=message, group=group)
         
         return JsonResponse({'success': True})
 
