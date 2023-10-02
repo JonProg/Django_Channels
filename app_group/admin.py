@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import GroupChat
+from .models import GroupChat, Message
 
 @admin.register(GroupChat)
 class GroupChatAdmin(admin.ModelAdmin):
@@ -11,3 +11,10 @@ class GroupChatAdmin(admin.ModelAdmin):
     prepopulated_fields = {
         "slug": ('name',),
     }
+
+@admin.register(Message)
+class MessageAdmin(admin.ModelAdmin):
+    list_display = 'id', 'sender', 'group', 'created_date'
+    list_display_links = 'group'
+    list_per_page = 10
+    ordering = '-id',
