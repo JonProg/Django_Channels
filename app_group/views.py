@@ -31,12 +31,14 @@ def group(request, group_slug):
     group = get_object_or_404(
         GroupChat, slug=group_slug
     )
+    messages = Message.objects.filter(group=group)
 
     title = f'Group | {group_slug}'
 
     context = {
         'group':group,
         'title':title,
+        'messages':messages,
     }
 
     return render(
