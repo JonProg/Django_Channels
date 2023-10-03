@@ -47,18 +47,35 @@
         h1{
             text-align: center;
         }
+
+        .style-chat{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #message{
+            margin-top: 1.5rem;
+        }
+
+        .btn-msg{
+            margin-top: 1rem;
+        }
     </style>
 </head>
     <body>
         <h1>{{ group.slug }}</h1>
-        <div id="chat">
+        <div id="chat" class="style-chat">
             {% if messages %}
                 {% for message in messages %}
-                    <p>{{ message }}</p>
+                    <p>{{ message.content }}</p>
                 {% endfor %}
             {% endif %}
         </div>
-        <input name="text" id="message"  autofocus>
-        <button onclick="sendMessage()">Enviar</button>
+        <div class="style-chat">
+            <input name="text" id="message"  autofocus>
+            <button onclick="sendMessage()" class="btn-msg">Enviar</button>
+        </div>
     </body>
 </html>

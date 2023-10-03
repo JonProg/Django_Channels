@@ -28,7 +28,7 @@ class Message(models.Model):
 
     content = models.TextField()
     created_date = models.DateTimeField(default=timezone.now)
-    group = models.OneToOneField(
+    group = models.ForeignKey(
         GroupChat,
         on_delete=models.CASCADE,
     )
