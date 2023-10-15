@@ -1,4 +1,5 @@
 from django.shortcuts import render, get_object_or_404
+from django.contrib.auth.decorators import login_required
 from app_group.models import GroupChat, Message
 from django.http import JsonResponse
 
