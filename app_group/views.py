@@ -27,7 +27,7 @@ def save_message(request):
         
         return JsonResponse({'success': True})
 
-
+@login_required
 def group(request, group_slug):    
     group = get_object_or_404(
         GroupChat, slug=group_slug
