@@ -10,8 +10,16 @@ PT-BR
 
 #
 
-<h2><img src="to_readme\coffe.png" width="25" height="25" align="center"></img> Como isso funciona na prática ?</h2>
+<h2><img src="to_readme\duvide_emoji.png" width="25" height="25" align="center"></img> Como isso funciona na prática ?</h2>
 
 ## video
+
+
+## 
+<h2><img src="to_readme\coffe.png" width="25" height="25" align="center"></img> Architecture
+
+#
+
+[![django-channels-generic-architecture-overview.png](https://i.postimg.cc/dtb0qX2Y/django-channels-generic-architecture-overview.png)](https://postimg.cc/1fKSBv7C)
 
 
