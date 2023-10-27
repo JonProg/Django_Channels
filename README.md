@@ -12,7 +12,8 @@ PT-BR
 
 <h2><img src="to_readme\duvide_emoji.png" width="25" height="25" align="center"></img> Como isso funciona na prática ?</h2>
 
-## video
+[<img src="https://img.youtube.com/vi/hx7y59cVWJ8/hqdefault.jpg" width="400" height="300"
+/>](https://youtu.be/hx7y59cVWJ8)
 
 
 ## 
