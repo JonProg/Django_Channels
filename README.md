@@ -25,15 +25,12 @@ EN
 [<img src="https://img.youtube.com/vi/hx7y59cVWJ8/hqdefault.jpg" width="400" height="300"
 />](https://youtu.be/hx7y59cVWJ8)
 
-#
 
-## 
-<h2><img src="to_readme\coffe.png" width="25" height="25" align="center"></img> Architecture
-
-
+<h2><img src="to_readme\coffe.png" width="25" height="25" align="center"></img> Architecture</h2>
+    
 [![django-channels-generic-architecture-overview.png](https://i.postimg.cc/dtb0qX2Y/django-channels-generic-architecture-overview.png)](https://postimg.cc/1fKSBv7C)
 
-#
+
 
 
 
